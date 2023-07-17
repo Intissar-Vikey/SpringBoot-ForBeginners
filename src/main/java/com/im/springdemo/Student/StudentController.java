@@ -22,5 +22,14 @@ public class StudentController {
         return studentService.getAllStudent();
     }
 
+    public Student findStudentByEmail(String email)
+    {return null;}
+
+    public void saveStudent(Student s)
+    {
+        
+    }
+
+
 
 }
