@@ -5,10 +5,10 @@ import java.util.List;
 
 public interface StudentService {
 
-     Student save (Student s);
-     List<Student> getAllStudent();
-     Student findByEmail(String email);
-     void delete(String email);
+     Student saveStudent (Student s);
+     List<Student> findAllStudent();
+     Student findStudentByEmail(String email);
+     void deleteStudent(String email);
      Student updateStudent (Student s);
 
 }

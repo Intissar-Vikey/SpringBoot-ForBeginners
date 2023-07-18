@@ -1,7 +1,4 @@
 package com.im.springdemo.Student;
-
-import ch.qos.logback.classic.pattern.ClassOfCallerConverter;
-
 import java.time.LocalDate;
 
 public class Student {

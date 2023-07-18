@@ -1,25 +1,21 @@
 package com.im.springdemo.Student;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Service
 public class InMemoryStudentService implements StudentService {
 
-    private InMemoryStudentDAO inMemoryStudentDAO;
+    private final InMemoryStudentDAO inMemoryStudentDAO;
 
-    @Autowired
     public InMemoryStudentService (InMemoryStudentDAO inMemoryStudentDAO){
-        this.inMemoryStudentDAO = inMemoryStudentDAO;
-
-    }
+        this.inMemoryStudentDAO = inMemoryStudentDAO;}
     
     @Override
-    public List<Student> getAllStudent() {
-        return List.of(
+    public List<Student> findAllStudent() {
+        return inMemoryStudentDAO.getAllStudent();	
+    /*	return List.of(
             new Student(
                 "Intissar",
                 "Mhamdi",
@@ -34,22 +30,21 @@ public class InMemoryStudentService implements StudentService {
                 "anas@gmail.com",
                 3)
 
-        ) ;
-
-    }
+        ) ;*/
+     }
     
     @Override
-    public Student save(Student s) {
+    public Student saveStudent(Student s) {
         return inMemoryStudentDAO.save(s);
     }
     @Override
-    public Student findByEmail(String email) {
+    public Student findStudentByEmail(String email) {
     	
     	return inMemoryStudentDAO.findByEmail(email);
     }
 
     @Override
-    public void delete(String email) {  	
+    public void deleteStudent(String email) {  	
     	inMemoryStudentDAO.delete(email);
     }
 
